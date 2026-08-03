@@ -1,4 +1,4 @@
-from app.enums import *
+from model.enums import *
 
 class Kanji:
     def __init__(self,
