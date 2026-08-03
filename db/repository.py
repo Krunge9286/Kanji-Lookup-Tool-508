@@ -1,10 +1,9 @@
 import abc
-from model.lex import *
-from typing import List
-
+from app.enums import *
+from app.kanji import Kanji
 
 class Repository(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
-    def load_lexicon(self) -> List[Lexentry]:
+    def get_kanji(self, literal):
         raise NotImplementedError
