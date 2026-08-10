@@ -1,5 +1,5 @@
-from app.enums import *
-from app.kana import *
+from model.enums import *
+from model.kana import *
 
 
 class UserInput:
@@ -21,5 +21,4 @@ class UserInput:
             self.kana = Kana.ROMAJI
         else:
             raise ValueError("Not a valid search string.")
-
-
+            
