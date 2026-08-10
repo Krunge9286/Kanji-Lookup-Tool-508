@@ -1,5 +1,4 @@
 from enum import Enum
-from app.kana import *
 
 
 class UserLabel(Enum):
@@ -11,4 +10,4 @@ class Kana(Enum):
      HIRAGANA = 1
      KATAKANA = 2
      ROMAJI   = 3
-
+     LETTERS  = 4
