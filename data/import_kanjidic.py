@@ -59,7 +59,7 @@ for character in root.findall("character"):
     nanori_text = ";".join(nanori_readings)
     meanings = []
     for meaning in character.findall("reading_meaning/rmgroup/meaning"):
-        if meaning.text is not None:
+        if meaning.text is not None and meaning.get("m_lang") is None:
             meanings.append(meaning.text)
     meaning_text = ";".join(meanings)
     cursor.execute(
@@ -80,3 +80,4 @@ cursor.close()
 connection.close()
 
 print("KANJIDIC2 import complete!")
+
