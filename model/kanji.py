@@ -17,14 +17,14 @@ class Kanji:
         self.onyomi_readings = onyomi_readings
         self.nanori_readings = nanori_readings
 
-        def get_json(self) -> dict:
-            return {
-                "form": self.form,
-                "meanings": self.meanings,
-                "unicode_value": self.unicode_value,
-                "stroke_count": self.stroke_count,
-                "kunyomi_readings": self.kunyomi_readings,
-                "onyomi_readings": self.onyomi_readings,
-                "nanori_readings": self.nanori_readings
-            }
+    def get_json(self) -> dict:
+        return {
+            "form": self.form,
+            "meanings": self.meanings,
+            "unicode_value": self.unicode_value,
+            "stroke_count": self.stroke_count,
+            "kunyomi_readings": self.kunyomi_readings,
+            "onyomi_readings": self.onyomi_readings,
+            "nanori_readings": self.nanori_readings
+        }
 
