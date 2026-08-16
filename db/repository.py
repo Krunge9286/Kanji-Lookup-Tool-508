@@ -1,6 +1,6 @@
 import abc
-from app.enums import *
-from app.kanji import Kanji
+from model.enums import *
+from model.kanji import Kanji
 
 class Repository(metaclass=abc.ABCMeta):
 
