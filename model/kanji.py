@@ -18,7 +18,7 @@ class Kanji:
         self.nanori_readings = nanori_readings
 
     def get_json(self) -> dict:
-        return {
+        json = {
             "form": self.form,
             "meanings": self.meanings,
             "unicode_value": self.unicode_value,
@@ -27,4 +27,5 @@ class Kanji:
             "onyomi_readings": self.onyomi_readings,
             "nanori_readings": self.nanori_readings
         }
+        return json
 
