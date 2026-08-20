@@ -33,5 +33,6 @@ class Services:
         min_mora = min(len(reading) for reading in shortened_readings)
         max_efficiency = round((max_mora / kanji.stroke_count), 3)
         min_efficiency = round((min_mora / kanji.stroke_count), 3)
-        return f"Minimum Efficiency: {min_efficiency}; Maximum Efficiency: {max_efficiency}"
+        return f"Minimum Efficiency: {min_efficiency}\n"\
+               f"Maximum Efficiency: {max_efficiency}\n"
       
