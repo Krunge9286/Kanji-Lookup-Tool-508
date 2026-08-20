@@ -51,9 +51,9 @@ for character in root.findall("character"):
         elif reading_type == "ja_kun":
             if reading.text is not None:
                 kunyomi_readings.append(reading.text)
-        elif reading_type == "nanori":
-            if reading.text is not None:
-                nanori_readings.append(reading.text)
+    for nanori in character.findall("reading_meaning/nanori"):
+        if nanori.text is not None:
+            nanori_readings.append(nanori.text)
     onyomi_text = ";".join(onyomi_readings)
     kunyomi_text = ";".join(kunyomi_readings)
     nanori_text = ";".join(nanori_readings)
