@@ -33,7 +33,26 @@ def lookup_kanji():
     if not data or not data.get("kanji"):
         return {"message": "Must provide a kanji"}, 400
     kanji = services.get_kanji_info(data.get("kanji"))
-    return jsonify(kanji.get_json())
+    return jsonify(
+        f"Form:              {kanji.form}\n"
+        f"Meanings:          {kanji.meanings}\n"
+        f"Kun'yomi Readings: {kanji.kunyomi_readings}\n"
+        f"On'yomi Readings:  {kanji.onyomi_readings}\n"
+        f"Nanori Readings:   {kanji.nanori_readings}\n"
+        f"Stroke Count:      {kanji.stroke_count}\n"
+        f"Unicode:           {kanji.unicode_value}"
+    )
+
+@app.route("/app/efficiency", methods=["POST"])
+def calculate_efficiency():
+    data = request.get_json()
+    app.logger.info(f"/app/efficiency - Got request: {data}")
+    if not data or not data.get("kanji"):
+        return {"message": "Must provide a kanji"}, 400
+    kanji = services.get_kanji_info(data.get("kanji"))
+    efficiency = services.get_efficiency_scores(kanji)
+    return jsonify(efficiency)
+
 
 if __name__ == "__main__":
     app.run(host="localhost")
